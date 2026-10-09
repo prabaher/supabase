@@ -15,7 +15,9 @@ const supabase = createClient(
 );
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "https://supabase-frontend-five.vercel.app"
+}));
 app.use(express.json());
 
 // Home route
