@@ -346,7 +346,7 @@
    The frontend does NOT connect directly to Supabase.
    ========================================================== */
 
-const API_URL = "https://supabase-production-14de.up.railway.app/";
+const API_URL = "https://supabase-production-14de.up.railway.app";
 
 
 /* ==========================================================
