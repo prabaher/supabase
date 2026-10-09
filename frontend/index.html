@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Send a message supa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="card">
+
+    <!-- Heading -->
+    <header>
+      <h1>Send us a message</h1>
+    </header>
+
+    <br>
+
+
+
+    <!-- Form -->
+    <form id="contact-form" novalidate>
+
+      <!-- Name -->
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+      </div>
+
+      <!-- Message -->
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="What would you like to say?" required></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button id="submit-btn" type="submit">Send message</button>
+
+      <!-- Success / error messages appear here -->
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+
+  </main>
+
+
+  <!-- type="module" is required because script.js uses import statements -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

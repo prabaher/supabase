@@ -1,0 +1,151 @@
+/* ==========================================================
+   Design tokens
+   ========================================================== */
+:root {
+  --bg: #071a12;            /* deep dark green */
+  --panel: #0d261a;         /* card background */
+  --field: #091f15;         /* input background */
+  --line: #1f5c3a;          /* green borders */
+  --text: #39ff88;          /* bright green main text */
+  --error: #ff5c7a;
+}
+
+
+/* ==========================================================
+   Base
+   ========================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+
+/* ==========================================================
+   Card
+   ========================================================== */
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: 36px 32px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin: 0 0 28px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   Fields
+   ========================================================== */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  background: var(--field);
+  color: var(--text);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+  resize: vertical;
+  transition: border-color 0.15s;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #5c6294;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--both);
+}
+
+
+/* ==========================================================
+   Submit button
+   ========================================================== */
+button[type="submit"] {
+  width: 100%;
+  margin-top: 6px;
+  padding: 15px;
+  background: var(--text);
+  color: var(--bg);
+  border: 0;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 800;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.15s;
+}
+
+button[type="submit"]:hover    { opacity: 0.9; }
+button[type="submit"]:active   { transform: scale(0.98); }
+button[type="submit"]:disabled { opacity: 0.5; cursor: wait; }
+
+button[type="submit"]:focus-visible {
+  outline: 3px solid var(--both);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================
+   Status messages
+   ========================================================== */
+#status {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+#status .ok    { color: var(--supabase); }
+#status .fail  { color: var(--error); }
+#status p      { margin: 0; }
+
+
+/* ==========================================================
+   Small screens
+   ========================================================== */
+@media (max-width: 480px) {
+  .card { padding: 28px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
